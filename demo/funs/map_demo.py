@@ -1,5 +1,5 @@
 
-data = "23,33, 44,55,64"
+data = "23,33,A44,55,64"
 
 def convertToInt(st):
      return int(st) if st.strip().isdigit() else 0
