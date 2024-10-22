@@ -13,6 +13,15 @@ class Course:
         print(f"Title = {self.title}")
         print(f"Fee = {self.fee}")
 
+    def __eq__(self, other):
+        return self.title == other.title
+
+    def __str__(self):
+        return f"{self.title} - {self.fee}"
+
+    def __gt__(self, other):
+        return  self.fee > other.fee
+
 
 # Create an object
 c1 = Course('Python')
