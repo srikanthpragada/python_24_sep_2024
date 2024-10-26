@@ -25,6 +25,14 @@ class Consultant(Employee):
     def getsalary(self):
         return self.hours * self.rate
 
+class SalariedEmployee(Employee):
+    def __init__(self, name, desg, salary):
+        super().__init__(name, desg)
+        self.salary = salary 
+
+    def getsalary(self):
+        return self.salary
+
 
 class Trainee(Employee):
     def __init__(self, name, desg):

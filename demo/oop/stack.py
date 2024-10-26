@@ -1,3 +1,8 @@
+class StackEmptyError(Exception):
+    def __str__(self):
+        return "Stack is empty!"
+
+
 class Stack:
     def __init__(self):
         self.data = []
@@ -6,7 +11,10 @@ class Stack:
         self.data.append(value)
 
     def pop(self):
-        return self.data.pop()
+        if self.length > 0:
+            return self.data.pop()
+        else:
+            raise StackEmptyError()
 
     @property
     def length(self):
@@ -23,8 +31,17 @@ class Stack:
 
 
 s = Stack()
+try:
+    s.pop()
+except ValueError as ex:
+    print('Error -->' + str(ex))
+
 s.push(10)
 s.push(20)
 print(s.peek())
 print(s.pop())
-print(s.length)   # property
+print(s.length)  # property
+
+
+# for v in s:
+#     print(v)
