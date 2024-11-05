@@ -21,5 +21,5 @@ bs = BeautifulSoup(html_doc, "html.parser")
 print(bs.p.text)
 
 for a in bs.find_all('a'):
-    print(a)
+    print(a['href'])
 
